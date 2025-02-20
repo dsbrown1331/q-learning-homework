@@ -80,3 +80,20 @@ Test both Boltzmann exploration and epsilon-greedy with several different epsilo
 
 ## Extra Credit 2: 
 Code up a DQN agent that uses convolutional layers as well as fully connected layers so you can learn from pixels and get an agent to learn how to drive in the Car Racing environment (one of the simplest pixel-based Gymnasium tasks) https://gymnasium.farama.org/environments/box2d/car_racing/. Note, having access to a GPU may be beneficial for speeding up the learning and it may take a while for the agent to learn. You don't have to fully solve the task, but you should be able to demonstrate that your agent is learning and that it learns to perform significantly better than a random policy.
+
+### Bug Note for Car Racing
+Unfortunately, there is a known bug: https://github.com/openai/gym/issues/3304 regarding the discrete action version of Car Racing which is what you should be using so you can use DQN.
+
+One option is to make a minor edit to the source code for the car racing env and simply by move the float conversion to after the if self.continuous: check such that for the discrete case else: the action will still be an integer. And the InvalidAction error is not raised (https://github.com/Farama-Foundation/Gymnasium/pull/1253).
+
+This is a pretty easy fix, once you find where the gymnasium source code has been installed. You just need to comment out line 544 and move that code inside the `if continuous:` block. This works for me.
+
+You need to find where anaconda installs packages, then find the directory corresponding to rl_env and look for the gymnasium code. On Windows I found the source code here:
+
+"C:\Users\dsbro\anaconda3\envs\rl_env\Lib\site-packages\gymnasium\envs\box2d\car_racing.py"
+
+I assume it's a similar path structure for Mac/Linux once you find the anaconda directory.
+
+Another option is to use the continuous action version of the environment but only use a discrete number of continuous actions as mentioned at the beginning of this article: https://notanymike.github.io/Solving-CarRacing/ 
+
+You would just hard code in the conversion before you call the step function so that you can learn Q-values over the 5 discrete actions, but you are passing one of a fixed set of continuous action vectors into the env. 
