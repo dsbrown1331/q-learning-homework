@@ -81,6 +81,8 @@ Test both Boltzmann exploration and epsilon-greedy with several different epsilo
 ## Extra Credit 2: 
 Code up a DQN agent that uses convolutional layers as well as fully connected layers so you can learn from pixels and get an agent to learn how to drive in the Car Racing environment (one of the simplest pixel-based Gymnasium tasks) https://gymnasium.farama.org/environments/box2d/car_racing/. Note, having access to a GPU may be beneficial for speeding up the learning and it may take a while for the agent to learn. You don't have to fully solve the task, but you should be able to demonstrate that your agent is learning and that it learns to perform significantly better than a random policy.
 
+Here are some potentially useful resources when trying to get this to work: https://github.com/andywu0913/OpenAI-GYM-CarRacing-DQN, https://github.com/CCS-Lab/project_car_racing. Please cite any resources you used and describe what implementation choices you made and what you learned. 
+
 ### Bug Note for Car Racing
 Unfortunately, there is a known bug: https://github.com/openai/gym/issues/3304 regarding the discrete action version of Car Racing which is what you should be using so you can use DQN.
 
