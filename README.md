@@ -83,8 +83,8 @@ Code up a DQN agent that uses convolutional layers as well as fully connected la
 
 Here are some potentially useful resources when trying to get this to work: https://github.com/andywu0913/OpenAI-GYM-CarRacing-DQN, https://github.com/CCS-Lab/project_car_racing. Please cite any resources you used and describe what implementation choices you made and what you learned. 
 
-### Bug Note for Car Racing
-Unfortunately, there is a known bug: https://github.com/openai/gym/issues/3304 regarding the discrete action version of Car Racing which is what you should be using so you can use DQN.
+### Bug Note for Car Racing (as of last year)
+Unfortunately, there is a known bug: https://github.com/openai/gym/issues/3304 regarding the discrete action version of Car Racing which is what you should be using so you can use DQN. Note: this may be fixed now, but we're including this in case you run into issues.
 
 One option is to make a minor edit to the source code for the car racing env and simply by move the float conversion to after the if self.continuous: check such that for the discrete case else: the action will still be an integer. And the InvalidAction error is not raised (https://github.com/Farama-Foundation/Gymnasium/pull/1253).
 
