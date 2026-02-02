@@ -28,9 +28,9 @@ You will also need PyTorch installed. You don’t need to have a GPU since the p
 https://pytorch.org/get-started/locally/ 
 
 
-## Part 1: Tabular Q-Learning to Win Big at Blackjack!!
+## Part 1: Tabular Q-Learning to Make Millions at Vegas?!
 
-For part 1, we will be implementing a basic vanilla Q-Learning agent (no function approximation) to learn to win at the game of Blackjack. 
+For part 1, we will be implementing a basic vanilla Q-Learning agent (no function approximation) to learn to play the game of Blackjack. 
 Before you start, read the description of the Blackjack environment on Gymnasium: https://gymnasium.farama.org/environments/toy_text/blackjack/ 
 You can also find tutorials on how to play Blackjack online, but note that real-world Blackjack at has some extra rules and actions beyond what this environment allows. We assume all you can do is “hit” or “stick” (also called “stand”).
 There are a couple versions. We will just use the default version corresponding to 
@@ -50,9 +50,9 @@ http://incompleteideas.net/book/ebook/node65.html
 If you get stuck, this is also good reference, but your implementation doesn’t have to be this complicated: 
 https://gymnasium.farama.org/tutorials/training_agents/blackjack_tutorial/#sphx-glr-tutorials-training-agents-blackjack-tutorial-py
 
-To show that your agent is learning, plot a learning curve where time is the x-axis and cumulative reward over trajectories is the y-axis. You should see a noisy but roughly monotonically improving performance curve. If you want a smoother curve you can periodically pause updates and run your learned policy (remember the policy is implicit in the Q-values so just taking argmax over Q-values gives you the current policy) over several episodes and average the rewards and plot these averages over time. Compare the performance of Q-Learning to a purely random policy. Give a brief report on your results.
+To show that your agent is learning, plot a learning curve where time is the x-axis and cumulative reward over trajectories is the y-axis. You should see a noisy but roughly monotonically improving performance curve. If you want a smoother curve you can periodically pause updates and run your learned policy (remember the policy is implicit in the Q-values so just taking argmax over Q-values gives you the current policy) over several episodes and average the rewards and plot these averages over time. Compare the performance of Q-Learning to a purely random policy (one that takes actions uniformly at random). Give a brief report on your results.
 
-Note that this game, like most at a Casino, is hard to consistently win, so you shouldn't be surprised if your win rate isn't very high. But you should do much better than a random policy.
+Note that for this game, like most at a Casino, is hard to consistently win, so you shouldn't be surprised if your win rate isn't very high. But you should do much better than a random policy.
 
 
 ## Part 2: Landing on the Moon using DQN!
