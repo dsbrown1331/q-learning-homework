@@ -1,6 +1,6 @@
 # Homework 4: Q-learning
 
-For this assignment you will be implementing a tabular Q-Learning agent to play Blackjack and also coding up a DQN agent to learn a policy for Lunar Lander. Write up a single report for your group and include all group member names when you submit to Canvas.
+For this assignment you will be implementing a tabular Q-Learning agent to play Blackjack and also coding up a DQN agent to learn a policy for Lunar Lander. Write and submit a single pdf report for your group and include all group member names when you submit to Canvas.
 
 
 ## Part 0:
